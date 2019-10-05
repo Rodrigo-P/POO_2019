@@ -7,36 +7,29 @@ package trabalho;
 
 import java.util.InputMismatchException;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 /**
- *
- * @author rodrigo
+ * @author Gabriela Vidal
+ * @author Rodrigo Piva
  */
 public class Texto {
-	private final LinkedList<String> lista = new LinkedList<String>();
-	private final Scanner in = new Scanner(System.in);	
+	private final LinkedList<String> lista = new LinkedList<String>();	
 
 	public Texto(){
 		lista.add("");
 	}
 
-        public int insere(){
-            String palavra;
+        public int insere(String palavra){
+            
             int tamanhoLista=lista.size()-1;
             String atual;
             int tamPalavra;
             
-            palavra = in.nextLine();
             tamPalavra=palavra.length();
             atual = lista.get(tamanhoLista);
             atual = atual + palavra;
-            if(atual.length()>400 && tamanhoLista>=0){
+            if(atual.length()>400){
                 lista.set(tamanhoLista, atual.substring(0, 401));
-            }else{
-                if(atual.length()>400){
-                    lista.add(atual.substring(0, 401));
-                }
             }
             
             while (atual.length()>400){
@@ -49,17 +42,10 @@ public class Texto {
             return tamPalavra;
         }
         
-	public String remove(){
-            int i;
+	public String remove(int i){
             int pos = lista.size()-1;
             int length = lista.get(pos).length();
             String ret="";
-		try{
-			i=in.nextInt();
-		}catch(InputMismatchException e){
-			in.nextLine();
-			i=0;
-		}
 		
 
 		if(i<1){

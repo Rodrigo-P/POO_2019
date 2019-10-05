@@ -20,8 +20,14 @@ public class Trabalho {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
+		
+		pilhaZ = new Pilha();
+		pilhaY = new Pilha();
+		
 		String buffer="";
+		
 		String tmpStr;
+		Elem tmpElem;
 		int tmpInt;
 		
 		while(!buffer.equals("4")){
@@ -35,19 +41,74 @@ public class Trabalho {
 			
 			switch(buffer){
 				case "0":
-					tmpInt=texto.insere();
+					tmpStr=input.nextLine();
+
+					tmpInt=texto.insere(tmpStr);
+					
+					if(tmpInt!=0){
+						pilhaZ.push("",tmpInt);
+						pilhaY.clear();
+					}
+
 					break;
 
 				case "1":
-					tmpStr=texto.remove();
-					System.out.print("Removido: ");
-					System.out.println(tmpStr);
+					try{
+						tmpInt=input.nextInt();
+					}catch(InputMismatchException e){
+						input.nextLine();
+						tmpInt=0;
+					}
+					
+					tmpStr=texto.remove(tmpInt);
+					
+					if(!tmpStr.equals("")){				
+						pilhaZ.push(tmpStr,0);
+						pilhaY.clear();
+					}
+					
 					break;
 
 				case "2":
+					tmpEl = pilhaZ.pop();
+
+					if(tmpEl==null){
+						break;
+					}
+
+					tmpInt=tmpEl.getSize();
+					tmpStr=tmpEl.getSize();
+					
+					if(tmpInt==0){
+						tmpInt = texto.insere(tmpStr);
+						tmpStr = "";
+					}else{
+						tmpStr = texto.remove(tmpInt);
+						tmpInt = 0;
+					}
+
+					pilhaY.push(tmpStr,tmpInt);
 					break;
 
 				case "3":
+					tmpEl = pilhaY.pop();
+					if(tmpEl==null){
+						break;
+					}
+
+					tmpInt=tmpEl.getSize();
+					tmpStr=tmpEl.getSize();
+					
+					if(tmpInt==0){
+						tmpInt = texto.insere(tmpStr);
+						tmpStr = "";
+					}else{
+						tmpStr = texto.remove(tmpInt);
+						tmpInt = 0;
+					}
+
+					pilhaZ.push(tmpStr,tmpInt);
+
 					break;
 			}
 		}

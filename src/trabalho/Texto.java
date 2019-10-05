@@ -25,32 +25,26 @@ public class Texto {
             String palavra;
             int tamanhoLista=lista.size()-1;
             String atual;
-            int tamanhoTot;
-            int addLista;
             int tamPalavra;
             
             palavra = in.nextLine();
             tamPalavra=palavra.length();
             atual = lista.get(tamanhoLista);
-            tamanhoTot = atual.length() + palavra.length();
-            
-            while(tamanhoTot>400){
-                if(palavra.length()-atual.length()<=400){
-                    addLista = 400 - atual.length();
-                    atual = atual + palavra.substring(0, addLista+1);
-                    lista.add(tamanhoLista, atual);
-                    palavra = palavra.substring(addLista+1);
-                    lista.add(palavra);
-                }else{
-                    addLista = 400 - atual.length();
-                    atual = atual + palavra.substring(0, addLista+1);
-                    lista.add(tamanhoLista, atual);
-                    palavra = palavra.substring(addLista+1);
-                    atual = "";
-                    tamanhoLista++;
+            atual = atual + palavra;
+            if(atual.length()>400 && tamanhoLista>=0){
+                lista.set(tamanhoLista, atual.substring(0, 401));
+            }else{
+                if(atual.length()>400){
+                    lista.add(atual.substring(0, 401));
                 }
-                tamanhoTot = atual.length() + palavra.length();
             }
+            
+            while (atual.length()>400){
+                lista.add(atual.substring(0, 401));
+                atual = atual.substring(401);
+            }
+            
+            lista.add(atual);
             
             return tamPalavra;
         }

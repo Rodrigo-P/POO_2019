@@ -10,7 +10,7 @@ package trabalho;
  * @author rodrigo
  */
 public class Pilha {
-	private elem topo;
+	private Elem topo;
 	
 	
 	
@@ -18,11 +18,11 @@ public class Pilha {
 		topo=null;
 	}
 
-	public elem pop(){
+	public Elem pop(){
 
 	}
 
-	public elem push(){
+	public Elem push(){
 
 	}
 	

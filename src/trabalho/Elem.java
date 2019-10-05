@@ -12,14 +12,14 @@ package trabalho;
 public class Elem {
 	private final int size;
 	private final String mod;
-	private elem prv;
+	private Elem prv;
 
-	public elem(int i, String s){
+	public Elem(int i, String s){
 		size=i;
 		mod=s;
 	}
 	
-	public elem getPrv(){
+	public Elem getPrv(){
 		
 	}
 

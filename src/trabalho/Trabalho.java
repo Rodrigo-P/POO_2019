@@ -35,7 +35,7 @@ public class Trabalho {
 			
 			switch(buffer){
 				case "0":
-					//tmpInt=texto.insere();
+					tmpInt=texto.insere();
 					break;
 
 				case "1":

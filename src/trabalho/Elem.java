@@ -30,5 +30,5 @@ public class Elem {
 	
 	public String getMod(){
 		return new String(mod);
-	}	
+	}
 }

@@ -33,11 +33,13 @@ public class Trabalho {
 		
 		while(!buffer.equals("4")){
 			TEXTO.print();
+			
 			System.out.println("|--------------------------------|");
 			System.out.println("|(0)Inserir       |    (1)Remover|");
 			System.out.println("|(2)Desfazer      |    (3)Refazer|");
 			System.out.println("|              (4)Sair           |");
 			System.out.println("|--------------------------------|");
+
 			buffer=input.nextLine();
 			
 			switch(buffer){
@@ -63,7 +65,7 @@ public class Trabalho {
 					
 					tmpStr=TEXTO.remove(tmpInt);
 					
-					if(!tmpStr.equals("")){				
+					if(!tmpStr.equals("")){	
 						pilhaZ.push(tmpStr,0);
 						pilhaY.clear();
 					}

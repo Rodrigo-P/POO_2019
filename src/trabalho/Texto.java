@@ -19,33 +19,33 @@ public class Texto {
 		lista.add("");
 	}
 
-    public int insere(String palavra){
-        
-        int tamanhoLista=lista.size()-1;
-        String atual;
-        int tamPalavra;
-        
-        tamPalavra=palavra.length();
-        atual = lista.get(tamanhoLista);
-        atual = atual + palavra;
-        if(atual.length()>400){
-            lista.set(tamanhoLista, atual.substring(0, 401));
-        }
-        
-        while (atual.length()>400){
-            lista.add(atual.substring(0, 401));
-            atual = atual.substring(401);
-        }
-        
-        lista.add(atual);
-        
-        return tamPalavra;
-    }
-        
+	public int insere(String palavra){
+		
+		int tamanhoLista=lista.size()-1;
+		String atual;
+		int tamPalavra;
+		
+		tamPalavra=palavra.length();
+		atual = lista.get(tamanhoLista);
+		atual = atual + palavra;
+		if(atual.length()>400){
+			lista.set(tamanhoLista, atual.substring(0, 401));
+		}
+		
+		while (atual.length()>400){
+			lista.add(atual.substring(0, 401));
+			atual = atual.substring(401);
+		}
+		
+		lista.add(atual);
+		
+		return tamPalavra;
+	}
+		
 	public String remove(int i){
-        int pos = lista.size()-1;
-        int length = lista.get(pos).length();
-        String ret="";
+		int pos = lista.size()-1;
+		int length = lista.get(pos).length();
+		String ret="";
 		
 
 		if(i<1){

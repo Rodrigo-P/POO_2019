@@ -35,11 +35,12 @@ public class Trabalho {
 			
 			switch(buffer){
 				case "0":
-					//tmpInttexto.insere();
+					//tmpInt=texto.insere();
 					break;
 
 				case "1":
 					tmpStr=texto.remove();
+					System.out.print("Removido: ");
 					System.out.println(tmpStr);
 					break;
 

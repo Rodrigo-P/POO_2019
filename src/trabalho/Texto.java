@@ -5,6 +5,7 @@
  */
 package trabalho;
 
+import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -17,7 +18,11 @@ public class Texto {
 	private final Scanner in = new Scanner(System.in);	
 
 	public Texto(){
-		lista.add("kk ABCDEFGHIJKLMNOPQRSTUVWXYZ Afersons");	
+		lista.add("kk");
+		lista.add(" | ");
+		lista.add("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+		lista.add(" | ");
+		lista.add("Afersons");
 	}
 
 
@@ -27,26 +32,37 @@ public class Texto {
 		int length = lista.get(pos).length();
 		String ret="";
 
-		i=in.nextInt();
+		try{
+			i=in.nextInt();
+		}catch(InputMismatchException e){
+			in.nextLine();
+			i=0;
+		}
+		
+
+		if(i<1){
+			return "";
+		}
 
 		while(true){
 			if(length>i){
-				ret=lista.get(pos).substring(length-i,length-1);
-				lista.set(pos,lista.get(pos).substring(0,length-i-1));
+				ret=ret.concat(lista.get(pos).substring(length-i,length));
+				lista.set(pos,lista.get(pos).substring(0,length-i));
 				return ret;
 			}else if(length==i){
-				ret=lista.get(pos);
+				ret=ret.concat(lista.get(pos));
 				lista.remove(pos);
 				return ret;
 			}else{
 				ret=ret.concat(lista.get(pos));
-				if(pos!=0){
+				if(pos==0){
+					lista.set(pos,"");
+					return ret;
+				}else{
 					lista.remove(pos);
 					i-=length;
 					pos--;
-				}else{
-					lista.set(pos,"");
-					i=0;
+					length = lista.get(pos).length();
 				}
 			}
 		}

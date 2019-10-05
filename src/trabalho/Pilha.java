@@ -18,19 +18,19 @@ public class Pilha {
 	}
 
 	public Elem pop(){
-            Elem topoAt = topo;
-            if(topo != null){
-                topo = topo.prv;
-            }
-            return topoAt;
+        Elem topoAt = topo;
+        if(topo != null){
+            topo = topo.prv;
+        }
+        return topoAt;
 	}
 
 	public void push(String palavra, int tam){
-            topo = new Elem(tam, palavra, topo);
+        topo = new Elem(tam, palavra, topo);
 	}
-        
-        public void clear (){
-            topo = null;
-        }
+    
+    public void clear (){
+        topo = null;
+    }
 	
 }

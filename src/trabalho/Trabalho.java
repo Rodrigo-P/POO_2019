@@ -17,7 +17,7 @@ public class Trabalho {
 	 * @param args the command line arguments
 	 */
 
-	private static final Texto texto = new Texto();
+	private static final Texto TEXTO = new Texto();
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
@@ -32,7 +32,7 @@ public class Trabalho {
 		int tmpInt;
 		
 		while(!buffer.equals("4")){
-			texto.print();
+			TEXTO.print();
 			System.out.println("|--------------------------------|");
 			System.out.println("|(0)Inserir       |    (1)Remover|");
 			System.out.println("|(2)Desfazer      |    (3)Refazer|");
@@ -44,7 +44,7 @@ public class Trabalho {
 				case "0":
 					tmpStr=input.nextLine();
 
-					tmpInt=texto.insere(tmpStr);
+					tmpInt=TEXTO.insere(tmpStr);
 					
 					if(tmpInt!=0){
 						pilhaZ.push("",tmpInt);
@@ -61,7 +61,7 @@ public class Trabalho {
 						tmpInt=0;
 					}
 					
-					tmpStr=texto.remove(tmpInt);
+					tmpStr=TEXTO.remove(tmpInt);
 					
 					if(!tmpStr.equals("")){				
 						pilhaZ.push(tmpStr,0);
@@ -81,10 +81,10 @@ public class Trabalho {
 					tmpStr=tmpEl.getMod();
 					
 					if(tmpInt==0){
-						tmpInt = texto.insere(tmpStr);
+						tmpInt = TEXTO.insere(tmpStr);
 						tmpStr = "";
 					}else{
-						tmpStr = texto.remove(tmpInt);
+						tmpStr = TEXTO.remove(tmpInt);
 						tmpInt = 0;
 					}
 
@@ -101,10 +101,10 @@ public class Trabalho {
 					tmpStr=tmpEl.getMod();
 					
 					if(tmpInt==0){
-						tmpInt = texto.insere(tmpStr);
+						tmpInt = TEXTO.insere(tmpStr);
 						tmpStr = "";
 					}else{
-						tmpStr = texto.remove(tmpInt);
+						tmpStr = TEXTO.remove(tmpInt);
 						tmpInt = 0;
 					}
 

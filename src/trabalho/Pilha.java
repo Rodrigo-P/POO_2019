@@ -6,8 +6,8 @@
 package trabalho;
 
 /**
- *
- * @author rodrigo
+ * @author Gabriela Vidal
+ * @author Rodrigo Piva
  */
 
 public class Pilha {
@@ -19,7 +19,9 @@ public class Pilha {
 
 	public Elem pop(){
             Elem topoAt = topo;
-            topo = topo.prv;
+            if(topo != null){
+                topo = topo.prv;
+            }
             return topoAt;
 	}
 

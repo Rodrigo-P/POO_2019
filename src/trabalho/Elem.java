@@ -6,8 +6,8 @@
 package trabalho;
 
 /**
- *
- * @author rodrigo
+ * @author Gabriela Vidal
+ * @author Rodrigo Piva
  */
 public class Elem {
 	private final int size;

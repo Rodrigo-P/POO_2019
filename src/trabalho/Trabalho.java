@@ -5,11 +5,12 @@
  */
 package trabalho;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- *
- * @author rodrigo
+ * @author Gabriela Vidal
+ * @author Rodrigo Piva
  */
 public class Trabalho {
 	/**
@@ -21,13 +22,13 @@ public class Trabalho {
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
 		
-		pilhaZ = new Pilha();
-		pilhaY = new Pilha();
+		Pilha pilhaZ = new Pilha();
+		Pilha pilhaY = new Pilha();
 		
 		String buffer="";
 		
 		String tmpStr;
-		Elem tmpElem;
+		Elem tmpEl;
 		int tmpInt;
 		
 		while(!buffer.equals("4")){
@@ -77,7 +78,7 @@ public class Trabalho {
 					}
 
 					tmpInt=tmpEl.getSize();
-					tmpStr=tmpEl.getSize();
+					tmpStr=tmpEl.getMod();
 					
 					if(tmpInt==0){
 						tmpInt = texto.insere(tmpStr);
@@ -97,7 +98,7 @@ public class Trabalho {
 					}
 
 					tmpInt=tmpEl.getSize();
-					tmpStr=tmpEl.getSize();
+					tmpStr=tmpEl.getMod();
 					
 					if(tmpInt==0){
 						tmpInt = texto.insere(tmpStr);

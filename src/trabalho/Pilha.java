@@ -12,18 +12,22 @@ package trabalho;
 public class Pilha {
 	private Elem topo;
 	
-	
-	
 	public Pilha(){
 		topo=null;
 	}
 
 	public Elem pop(){
-
+            Elem topoAt = topo;
+            topo = topo.prv;
+            return topoAt;
 	}
 
-	public Elem push(){
-
+	public void push(String palavra, int tam){
+            topo = new Elem(tam, palavra, topo);
 	}
+        
+        public void clear (){
+            topo = null;
+        }
 	
 }

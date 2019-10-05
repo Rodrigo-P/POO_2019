@@ -12,7 +12,7 @@ package trabalho;
 public class Elem {
 	private final int size;
 	private final String mod;
-	private final Elem prv;
+	public final Elem prv;
 
 	public Elem(int i, String s,Elem e){
 		size = i;
@@ -21,7 +21,7 @@ public class Elem {
 	}
 	
 	public Elem getPrv(){
-		return new Elem(prv);
+		return prv;
 	}
 
 	public int getSize(){

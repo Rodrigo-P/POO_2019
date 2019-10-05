@@ -12,15 +12,16 @@ package trabalho;
 public class Elem {
 	private final int size;
 	private final String mod;
-	private Elem prv;
+	private final Elem prv;
 
-	public Elem(int i, String s){
-		size=i;
-		mod=s;
+	public Elem(int i, String s,Elem e){
+		size = i;
+		mod = s;
+		prv = e;
 	}
 	
 	public Elem getPrv(){
-		
+		return new Elem(prv);
 	}
 
 	public int getSize(){

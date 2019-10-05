@@ -9,6 +9,7 @@ package trabalho;
  *
  * @author rodrigo
  */
+
 public class Pilha {
 	private Elem topo;
 	

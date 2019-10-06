@@ -5,7 +5,7 @@
  */
 package trabalho;
 
-/**
+/** Classe que contém algumas implementações das funções Refaz e Desfaz
  * @author Gabriela Vidal
  * @author Rodrigo Piva
  */
@@ -17,7 +17,7 @@ public class Pilha {
 		topo=null;
 	}
 
-	public Elem pop(){
+	public Elem pop(){  //retira o elemento do topo da pilha
 		Elem topoAt = topo;
 		if(topo != null){
 			topo = topo.prv;
@@ -25,11 +25,11 @@ public class Pilha {
 		return topoAt;
 	}
 
-	public void push(String palavra, int tam){
+	public void push(String palavra, int tam){  //Insere um elemento no topo da pilha
 		topo = new Elem(tam, palavra, topo);
 	}
 	
-	public void clear (){
+	public void clear (){   //Limpa toda a pilha
 		topo = null;
 	}
 }
